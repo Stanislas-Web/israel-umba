@@ -1,0 +1,163 @@
+<!DOCTYPE HTML>
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
+<head>
+	<title>Happy Birthday Israël Umba</title>
+	<meta http-equiv="content-type" content="text/html; charset=UTF-8">
+	<meta content="width=device-width, initial-scale=1" name="viewport" />
+	<style type="text/css">
+		@font-face {
+			font-family: digit;
+			src: url('digital-7_mono.ttf') format("truetype");
+		}
+		body{
+			font-family:'Pacifico', cursive;
+			
+		}
+
+		.space .comments{
+			font-family: 'Pacifico', cursive;
+			font-size: 30px;
+		}
+		.const{
+			color: #B282D1;
+		}
+		.nom{
+			color:#82AAFF;
+		}
+		.str{
+			color: #ECC48D;
+		}
+		.caract{
+			color: rgb(26, 24, 24);
+		}
+		.log{
+			color: #69B967;
+		}
+		.acc{
+			color: #D3423D;
+		}
+		.img{
+			width: 100%;
+			padding-top: 1%;
+			text-align: center;
+		}
+		.img img{
+			width: 300px;
+			height: 300px;
+			border: 5px solid #ffffff;
+   			border-radius: 90%;
+    		box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+		}
+		@media screen and (max-width: 900px) {
+				.parent{
+					display: flex;
+					flex-direction: column;
+					justify-content: center;
+					align-items: center;
+					/* font-size: 50px; */
+				}
+				.space .comments{
+					font-family: 'Pacifico', cursive;
+					font-size: 80px;
+				}
+		}
+
+
+	</style>
+	<link href="css/default.css" type="text/css" rel="stylesheet">
+	<link href="https://fonts.googleapis.com/css?family=Pacifico&display=swap" rel="stylesheet">
+	<script type="text/javascript" src="js/jquery.js"></script>
+	<script type="text/javascript" src="js/garden_dev.js"></script>
+    <script type="text/javascript" src="js/functions_dev.js"></script>
+</head>
+
+<body>
+
+	<div id="mainDiv">
+		
+		<div id="content">
+			
+			<div class="img">
+				<p style="font-size:30px; color: #3F7F5F;">Cliquez sur la photo svp</p>
+				<img src="img/isra.jpeg" alt="">
+			</div>
+
+			<div class="parent">
+			<div id="code">
+				
+
+
+				<span class="comments">/**</span><br />
+				<span class="space"/><span class="comments">Aujourd'hui, le 27 Mai, c'est ton anniversaire Israël Umba..</span><br />
+				<span class="space"/><span class="comments">Un an de plus de bonheur à vivre !</span><br />
+				<!-- <span class="space"/><span class="comments">Du bonheur en plus!</span><br />
+				<span class="space"/><span class="comments">Profite bien de ce temps qui t’est donné à vivre</span><br />
+				<span class="space"/><span class="">*/</span><br />
+				<!-- <span class="const">const</span> <span class="nom">nom</span><span class="const"> = </span> <span class="caract">"</span><span class="str">Israël Umba</span><span class="caract">"</span><span class="caract">;</span><br /> -->
+				<!-- <span class="comments"> 27 Mai, lorsque la cloche a sonné, votre âge a augmenté</span><br /> -->
+			 	<!-- <span class="log">console.log</span><span class="caract">(`</span><span class="string"><span class="log">Happy Birthday </span> <span class="acc">${</span><span class="caract">nom</span><span class="acc">}</span></span><span class="caract">`);</span> -->
+
+			</div>
+			<div id="loveHeart">
+				<canvas id="garden"></canvas>
+				<div id="words">
+					<div id="messages">
+					</br>
+					</br>
+					</br>
+					</br>
+
+					</div>
+				</div>
+			</div>
+			</div>
+		</div>
+		<!-- <iframe src="audio/1.mp3"  id="audio" style="display: none"></iframe> -->
+		<audio id="player" >
+			<source src="audio/2.mp3" type="audio/mp3">
+		</audio>
+
+	</div>
+	<script type="text/javascript">
+
+		const img = document.querySelector('img');
+		img.addEventListener("click", function(){
+			const audio = document.querySelector("audio");
+			audio.play();
+		})
+
+
+		var offsetX = $("#loveHeart").width() / 2;
+		var offsetY = $("#loveHeart").height() / 2 - 55;
+		var together = new Date();
+		together.setFullYear(1997,7, 9);
+		together.setHours(8);
+		together.setMinutes(0);
+		together.setSeconds(0);
+		together.setMilliseconds(0);
+		
+		if (!document.createElement('canvas').getContext) {
+			var msg = document.createElement("div");
+			msg.id = "errorMsg";
+			msg.innerHTML = "Your browser doesn't support HTML5!<br/>Recommend use Chrome 14+/IE 9+/Firefox 7+/Safari 4+"; 
+			document.body.appendChild(msg);
+			$("#code").css("display", "none")
+			$("#copyright").css("position", "absolute");
+			$("#copyright").css("bottom", "10px");
+		    document.execCommand("stop");
+		} else {
+			setTimeout(function () {
+				startHeartAnimation();
+			}, 5000);
+
+			timeElapse(together);
+			setInterval(function () {
+				timeElapse(together);
+			}, 500);
+
+			adjustCodePosition();
+			$("#code").typewriter();
+		}
+	</script>
+</body>
+</html>
